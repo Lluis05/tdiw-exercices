@@ -1,16 +1,17 @@
 h1{
     color:darkblue;
+    font-style: italic;
 }
-h1,h3{
+h3{
     font-style: italic;
 }
 
 header p{
-    font-family: 'Courier New';
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .fancy{
-    font-family: 'Times';
+    font-family: 'Times New Roman', Times, serif;
 }
 header.fancy{
     color: magenta; 
