@@ -5,6 +5,8 @@
     <meta charset="utf-8" />
     <title> UAB/Enginyeria </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/uab.css">
+    <script src="js/funcions.js"></script>
 
 </head>
 
@@ -41,27 +43,29 @@
             <h3>Registra't com a alumne en un grau: </h3>
         </header>
         <p> Si us plau facilita'ns les teves dades </p>
-        <form method="post" action="" onsubmit="return confirmaRegistre();"><!-- completa -->
-            <label for="nom">Nom complet:</label> <input type="text" name="nom" id="nom" /><br />
-            <label for="clau">Password:</label> <input type="password" name="clau" id="clau" /><br />
-            <label for="grau">Grau:</label>
-            <select name="grau" id="graus">
-                <option value="1">Enginyeria Informàtica</option>
-                <option value="2">Enginyeria de Sistemes de Telecomunicació</option>
-                <option value="3">Enginyeria Electrònica de Telecomunicació</option>
-                <option value="4">Enginyeria Química</option>
-            </select>
-            <p>Tria la menció que t'atreu més:
-            <p>
-                <select name="mencio">
-                    <option value="1">Enginyeria del software</option>
-                    <option value="2">Enginyeria de computadors</option>
-                    <option value="3">Computació</option>
-                    <option value="4">Tecnologies de la informació</option>
+        <div id="formDiv">
+            <form method="post" action="" onsubmit="return confirmaRegistre();"><!-- completa -->
+                <label for="nom">Nom complet:</label> <input type="text" name="nom" id="nom" /><br />
+                <label for="clau">Password:</label> <input type="password" name="clau" id="clau" /><br />
+                <label for="grau">Grau:</label>
+                <select name="grau" id="graus">
+                    <option value="1">Enginyeria Informàtica</option>
+                    <option value="2">Enginyeria de Sistemes de Telecomunicació</option>
+                    <option value="3">Enginyeria Electrònica de Telecomunicació</option>
+                    <option value="4">Enginyeria Química</option>
                 </select>
-                <br /><br />
-                <input type="submit" value="Registrar-me" />
-        </form>
+                <p>Tria la menció que t'atreu més:
+                <p>
+                    <select name="mencio">
+                        <option value="1">Enginyeria del software</option>
+                        <option value="2">Enginyeria de computadors</option>
+                        <option value="3">Computació</option>
+                        <option value="4">Tecnologies de la informació</option>
+                    </select>
+                    <br /><br />
+                    <input type="submit" value="Registrar-me" />
+            </form>
+        </div>
         <hr />
     </section>
 

@@ -1,0 +1,38 @@
+h1{
+    color:darkblue;
+}
+h1,h3{
+    font-style: italic;
+}
+
+header p{
+    font-family: 'Courier New';
+}
+
+.fancy{
+    font-family: 'Times';
+}
+header.fancy{
+    color: magenta; 
+}
+
+section.statistics header h3{
+    color: red;
+}
+
+
+table{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+p.important{
+    font-weight: bold;
+    font-size: 30px;
+    background-color: aqua;
+}
+
+img{
+    float: left;
+    padding: 0 0 0 10px;
+}
