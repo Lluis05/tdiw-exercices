@@ -1,17 +1,16 @@
 h1{
     color:darkblue;
-    font-style: italic;
 }
-h3{
+h1, h3{
     font-style: italic;
 }
 
 header p{
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Courier New';
 }
 
 .fancy{
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Times';
 }
 header.fancy{
     color: magenta; 
@@ -36,4 +35,9 @@ p.important{
 img{
     float: left;
     padding: 0 0 0 10px;
+    text-decoration: none; /*The teacher wrote it but it never said in the statment of the exercice*/
+}
+
+ul li { /*so de "bullets" get align with the text, also an extra from the teacher*/ 
+    list-style-position: inside;
 }
