@@ -41,3 +41,63 @@ img{
 ul li { /*so de "bullets" get align with the text, also an extra from the teacher*/ 
     list-style-position: inside;
 }
+
+#page {
+    display: grid;
+    background-color: lightgray;
+    column-gap: 5px;
+    row-gap: 5px;
+    padding: 5px;
+    grid-template-areas:    
+        'header header'
+        'graus registre'
+        'estadistiques estadistiques'
+        'footer footer';
+    
+}
+#page div{
+    background-color: white;
+    padding: 5px;
+    margin: 2px;
+    text-align: center;
+    vertical-align: middle;
+}
+footer {
+    text-align: right;
+}
+#tableStatistics{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 600px) {
+    #page{
+        grid-template-areas:    
+        'header'
+        'graus'
+        'registre'
+        'estadistiques'
+        'footer';
+    }
+    #page div{
+        text-align: left;
+    }
+}
+
+ #logo {
+    animation-name: rodant;
+    animation-duration: 5s;
+    animation-delay: 1s;
+    animation-timing-function: linear;
+ }
+ @keyframes rodant {
+    0% {
+        width: 0px;
+        height: 0px;
+    } 
+    100% {
+        width: 100px;
+        height: 100px;
+        transform: rotate(360deg);
+    } 
+ }
