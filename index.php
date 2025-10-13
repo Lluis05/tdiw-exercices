@@ -12,6 +12,9 @@
 </head>
 
 <body>
+    <?php
+        //complete
+    ?>
     <div id="page">
         <!-- SECCIÓ 1 - Capçalera -->
         <div style="grid-area: header;">       
