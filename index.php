@@ -6,6 +6,7 @@
     <title> UAB/Enginyeria </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="css/uab.css">
+    
     <script src="js/funcions.js"></script>
     
 
@@ -13,7 +14,8 @@
 
 <body>
     <?php
-        //complete
+        inlcude_once __DIR__."/connectaBD.php";
+        $con=connectaBD();
     ?>
     <div id="page">
         <!-- SECCIÓ 1 - Capçalera -->
@@ -53,26 +55,31 @@
                 </header>
                 <p> Si us plau facilita'ns les teves dades </p>
                 <div id="formDiv">
-                    <form method="post" action="" onsubmit="return confirmaRegistre();"><!-- completa -->
-                        <label for="nom">Nom complet:</label> <input type="text" name="nom" id="nom" /><br />
-                        <label for="clau">Password:</label> <input type="password" name="clau" id="clau" /><br />
-                        <label for="grau">Grau:</label>
-                        <select name="grau" id="graus" onchange="carregaMencions()">
-                            <option value="1">Enginyeria Informàtica</option>
-                            <option value="2">Enginyeria de Sistemes de Telecomunicació</option>
-                            <option value="3">Enginyeria Electrònica de Telecomunicació</option>
-                            <option value="4">Enginyeria Química</option>
+                    <form method="post" action="registre.php">
+                        Nom complet: <input type="text" name="nom" /><br />
+                        Password: <input type="password" name="clau" /><br />
+                        Grau:
+                        <select name="grau" id="graus">
+                        <?php
+                            $query = "SELECT * FROM graus";
+                            $resultSet = pg_query($con, $query);
+                            $rows = pg_fetch_all($resultSet);
+                            foreach($rows as $row){
+                                //echo "<option value='".$row['id'].">".$row['nom']."</option";
+                        ?>
+                            <option value ="<?=$row['id']?>"><?=$row['nom']?></option>
+                        <?php      
+                            }
+                        ?>
                         </select>
-                        <p>Tria la menció que t'atreu més:
-                        <p>
-                            <select name="mencio" id="mencions">
-                                <option value="1">Enginyeria del software</option>
-                                <option value="2">Enginyeria de computadors</option>
-                                <option value="3">Computació</option>
-                                <option value="4">Tecnologies de la informació</option>
-                            </select>
-                            <br /><br />
-                            <input type="submit" value="Registrar-me" />
+                        <p>Tria la menció que t'atreu més:<p>
+                        <select name="mencio" id="mencions">
+                        <?php
+                            //completa
+                        ?>
+                        </select>
+                        <br /><br />
+                        <input type="submit" value="Registrar-me" />
                     </form>
                 </div>
             </section>
