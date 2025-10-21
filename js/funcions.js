@@ -13,9 +13,11 @@ async function carregaMencions(){
     document.getElementById("mencions").innerHTML = respostaTxt;
 }
 
-$(document).ready(function(){  //the same as the funcion above
+//the same as the funcion above
+$(document).ready(function(){  
     $("#graus").change(function(){
         let grau = $("#graus").val()
+        
         //1st method but only if u want to change slope (codi html)
         //$("#mencions").load("./mencions.php?grau"+grau)
 

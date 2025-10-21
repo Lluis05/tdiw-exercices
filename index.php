@@ -16,6 +16,7 @@
     <?php
         include_once __DIR__."/connectaBD.php";
         $con=connectaBD();
+        
     ?>
     <div id="page">
         <!-- SECCIÓ 1 - Capçalera -->
