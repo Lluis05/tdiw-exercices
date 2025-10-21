@@ -6,7 +6,7 @@
     <title> UAB/Enginyeria </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="css/uab.css">
-    
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="js/funcions.js"></script>
     
 
@@ -14,7 +14,7 @@
 
 <body>
     <?php
-        inlcude_once __DIR__."/connectaBD.php";
+        include_once __DIR__."/connectaBD.php";
         $con=connectaBD();
     ?>
     <div id="page">
@@ -62,7 +62,7 @@
                         <select name="grau" id="graus">
                         <?php
                             $query = "SELECT * FROM graus";
-                            $resultSet = pg_query($con, $query);
+                            $resultSet = pg_query($con, $query) or die("Error sql graus");
                             $rows = pg_fetch_all($resultSet);
                             foreach($rows as $row){
                                 //echo "<option value='".$row['id'].">".$row['nom']."</option";
@@ -75,7 +75,15 @@
                         <p>Tria la menció que t'atreu més:<p>
                         <select name="mencio" id="mencions">
                         <?php
-                            //completa
+                            $query = "SELECT * FROM mencions WHERE grau=1";
+                            $resultSet = pg_query($con, $query) or die("Error sql graus");
+                            $rows = pg_fetch_all($resultSet);
+                            foreach($rows as $row):
+                                //echo "<option value='".$row['id'].">".$row['nom']."</option";
+                        ?>
+                            <option value ="<?=$row['id']?>"><?=$row['nom']?></option>
+                        <?php      
+                            endforeach;
                         ?>
                         </select>
                         <br /><br />
