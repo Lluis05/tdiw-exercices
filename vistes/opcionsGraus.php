@@ -1,5 +1,5 @@
 <?php
-    foreach($rows_grus as $row){
+    foreach($rows_graus as $row){
         //echo "<option value='".$row['id'].">".$row['nom']."</option";
 ?>
     <option value ="<?=$row['id']?>"><?=$row['nom']?></option>
