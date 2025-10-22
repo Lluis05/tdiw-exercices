@@ -41,7 +41,7 @@ $(document).ready(function(){
         
         //4th $.ajax
         $.ajax({
-            url: "./mencions.php?grau"+grau, 
+            url: "./controladors/mencions.php?grau"+grau, 
             success: function (data){
                 $("mencions").html(data);
             }

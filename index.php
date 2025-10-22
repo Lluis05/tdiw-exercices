@@ -13,11 +13,6 @@
 </head>
 
 <body>
-    <?php
-        include_once __DIR__."/connectaBD.php";
-        $con=connectaBD();
-        
-    ?>
     <div id="page">
         <!-- SECCIÓ 1 - Capçalera -->
         <div style="grid-area: header;">       
@@ -62,29 +57,13 @@
                         Grau:
                         <select name="grau" id="graus">
                         <?php
-                            $query = "SELECT * FROM graus";
-                            $resultSet = pg_query($con, $query) or die("Error sql graus");
-                            $rows = pg_fetch_all($resultSet);
-                            foreach($rows as $row){
-                                //echo "<option value='".$row['id'].">".$row['nom']."</option";
-                        ?>
-                            <option value ="<?=$row['id']?>"><?=$row['nom']?></option>
-                        <?php      
-                            }
+                            include_once __DIR__."/controladors/graus.php";
                         ?>
                         </select>
                         <p>Tria la menció que t'atreu més:<p>
                         <select name="mencio" id="mencions">
                         <?php
-                            $query = "SELECT * FROM mencions WHERE grau=1";
-                            $resultSet = pg_query($con, $query) or die("Error sql graus");
-                            $rows = pg_fetch_all($resultSet);
-                            foreach($rows as $row):
-                                //echo "<option value='".$row['id'].">".$row['nom']."</option";
-                        ?>
-                            <option value ="<?=$row['id']?>"><?=$row['nom']?></option>
-                        <?php      
-                            endforeach;
+                            include_once __DIR__."/controladors/mencions.php";
                         ?>
                         </select>
                         <br /><br />
